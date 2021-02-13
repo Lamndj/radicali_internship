@@ -1,0 +1,48 @@
+.confirmation {
+  background-color: #efefef;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: #333;
+}
+
+.confirmation__body {
+  background-color: white;
+  width: 50%;
+  padding: 20px;
+}
+
+.confirmation__card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 4px;
+  width: 100%;
+}
+
+.confirmation__field {
+  display: flex;
+  width: 60%;
+}
+
+.confirmation__field label {
+  font-size: 14px;
+  margin: 0;
+  width: 50%;
+  font-weight: bold;
+}
+
+.confirmation__field p {
+  font-size: 14px;
+  width: 50%;
+  text-align: right;
+  margin: 0;
+}
+
+.confirmation__btn {
+  display: flex;
+  margin: 20px auto 0 auto;
+}

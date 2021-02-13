@@ -1,0 +1,50 @@
+.todoList {
+  min-height: 400px;
+  background-color: white;
+  box-shadow: inset;
+  width: 50%;
+  margin: 0 auto;
+  padding: 20px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: center;
+}
+
+.todoList__addMore {
+  /* margin-left: auto; */
+  margin: 0;
+}
+
+.todoList__emptyMsg {
+  font-size: 20px;
+}
+
+.todoList__addMore {
+  color: #00a4ef;
+  cursor: pointer;
+  font-size: 16px;
+  width: fit-content;
+  /* position: absolute;
+  bottom: 0;
+  right: 20px; */
+}
+
+.todoList__addMore:hover {
+  text-decoration: underline;
+}
+
+.todoList__single {
+  display: flex;
+  background-color: #efefef;
+  padding: 12px;
+  margin-bottom: 4px;
+  width: 100%;
+}
+
+.todoList__single p {
+  margin: 0 12px 0 0;
+  font-size: 14px;
+  width: 25%;
+}

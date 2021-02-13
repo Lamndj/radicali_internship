@@ -1,0 +1,30 @@
+.todoInput {
+  min-height: 400px;
+  background-color: white;
+  box-shadow: inset;
+  width: 50%;
+  margin: 0 auto;
+  padding: 20px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.todoInput .ms-TextField,
+.todoInput .ms-Dropdown-container {
+  width: 60%;
+  margin: 0 auto 20px auto;
+}
+
+.todoInput__btn {
+  margin: 0 auto;
+  display: flex;
+}
+
+.todoInput__error {
+  color: red;
+  font-size: 16px;
+  text-align: center;
+  margin: 0 0 20px 0;
+}
