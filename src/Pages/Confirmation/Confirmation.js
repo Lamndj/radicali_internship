@@ -1,10 +1,8 @@
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { PrimaryButton } from "@fluentui/react";
+import { PrimaryButton } from "office-ui-fabric-react";
 import { useHistory } from "react-router-dom";
 import "./Confirmation.css";
-
-import { NeutralColors } from "@fluentui/theme";
 
 export default function Confirmation() {
   const confirmTodo = useSelector((state) => state.confirmTodo);

@@ -16,18 +16,12 @@ function App() {
         type: "DARK_MODE",
         payload: true,
       });
-      // document.querySelectorAll(".color__inverted").forEach((ele) => {
-      //   ele.classList.add("color__invert");
-      // });
     } else {
       document.documentElement.classList.remove("dark__mode");
       dispatch({
         type: "DARK_MODE",
         payload: false,
       });
-      // document.querySelectorAll(".color__inverted").forEach((ele) => {
-      //   ele.classList.remove("color__invert");
-      // });
     }
   };
 
