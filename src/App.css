@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 .dark__mode {
   filter: invert(1) hue-rotate(180deg);
 }
@@ -10,4 +14,5 @@
 
 .color__invert {
   filter: invert(1) hue-rotate(180deg);
+  background-color: unset !important;
 }

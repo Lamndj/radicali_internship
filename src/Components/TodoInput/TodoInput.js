@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { TextField } from "office-ui-fabric-react/lib/TextField";
 import { Dropdown } from "office-ui-fabric-react/lib/Dropdown";
 import { PrimaryButton } from "office-ui-fabric-react";
@@ -14,6 +14,8 @@ export default function TodoInput({ handleFormChange }) {
   const [status, setStatus] = useState("");
   const [fieldError, setfieldError] = useState(false);
   const hHistory = useHistory();
+
+  const darkMode = useSelector((state) => state.darkMode);
 
   const saveToDo = () => {
     if (title !== "" && desc !== "") {
@@ -47,40 +49,46 @@ export default function TodoInput({ handleFormChange }) {
     { key: "done", text: "Done" },
   ];
 
+  console.log(darkMode);
+
   return (
-    <div className="todoInput">
-      <TextField
-        label="Title"
-        required
-        value={title}
-        onChange={(e) => setTitle(e.target.value)}
-      />
-      <TextField
-        label="Description"
-        required
-        value={desc}
-        onChange={(e) => setDesc(e.target.value)}
-      />
-      <TextField
-        label="Due Date"
-        type="date"
-        value={dueDate}
-        onChange={(e) => setDueDate(e.target.value)}
-      />
-      <Dropdown
-        placeholder="Select an option"
-        label="Status"
-        options={options}
-        value={status}
-        onChange={(e, item) => setStatus(item.key)}
-      />
-      {fieldError && (
-        <p className="todoInput__error">Title and Description are mandatory!</p>
-      )}
+    <div className={darkMode ? "todoInput color__invert" : "todoInput"}>
+      <div className={darkMode ? "color__invert" : ""}>
+        <TextField
+          label="Title"
+          required
+          value={title}
+          onChange={(e) => setTitle(e.target.value)}
+        />
+        <TextField
+          label="Description"
+          required
+          value={desc}
+          onChange={(e) => setDesc(e.target.value)}
+        />
+        <TextField
+          label="Due Date"
+          type="date"
+          value={dueDate}
+          onChange={(e) => setDueDate(e.target.value)}
+        />
+        <Dropdown
+          placeholder="Select an option"
+          label="Status"
+          options={options}
+          value={status}
+          onChange={(e, item) => setStatus(item.key)}
+        />
+        {fieldError && (
+          <p className="todoInput__error">
+            Title and Description are mandatory!
+          </p>
+        )}
+      </div>
       <PrimaryButton
         text="Save"
         onClick={saveToDo}
-        className="todoInput__btn color__inverted"
+        className="todoInput__btn"
       />
     </div>
   );

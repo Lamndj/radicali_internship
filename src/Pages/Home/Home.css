@@ -9,9 +9,14 @@
 }
 
 .home__header__title {
-  background-color: #ffb900;
+  /* background-color: #0078d4; */
   padding: 12px;
-  color: #fff;
+  color: #333;
+  font-size: 32px;
+}
+
+.home__header__title strong {
+  color: #0078d4;
 }
 
 .home__body {

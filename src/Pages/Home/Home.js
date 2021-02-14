@@ -12,7 +12,7 @@ export default function Home() {
   return (
     <div className="home">
       <header className="home__header">
-        <p className="home__header__title color__inverted">
+        <p className="home__header__title">
           My <strong>To-Do</strong> List
         </p>
         <div className="home__body">

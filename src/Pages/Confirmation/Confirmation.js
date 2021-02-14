@@ -1,13 +1,16 @@
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { PrimaryButton } from "office-ui-fabric-react";
+import { PrimaryButton } from "@fluentui/react";
 import { useHistory } from "react-router-dom";
 import "./Confirmation.css";
+
+import { NeutralColors } from "@fluentui/theme";
 
 export default function Confirmation() {
   const confirmTodo = useSelector((state) => state.confirmTodo);
   const dispatch = useDispatch();
   const hHistory = useHistory();
+  const darkMode = useSelector((state) => state.darkMode);
 
   useEffect(() => {
     // if (!confirmTodo || !confirmTodo.id) {
@@ -26,8 +29,16 @@ export default function Confirmation() {
 
   return (
     <div className="confirmation">
-      <div className="confirmation__body">
-        <div className="confirmation__card">
+      <div
+        className={
+          darkMode ? "confirmation__body color__invert" : "confirmation__body"
+        }
+      >
+        <div
+          className={
+            darkMode ? "confirmation__card color__invert" : "confirmation__card"
+          }
+        >
           <div className="confirmation__field">
             <label>Title</label>
             <p>{confirmTodo.title}</p>
@@ -48,7 +59,7 @@ export default function Confirmation() {
         <PrimaryButton
           text="Confirm"
           onClick={saveToDo}
-          className="confirmation__btn color__inverted"
+          className="confirmation__btn"
         />
       </div>
     </div>

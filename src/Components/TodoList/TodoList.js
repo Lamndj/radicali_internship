@@ -4,9 +4,14 @@ import "./TodoList.css";
 
 export default function TodoList({ handleFormChange }) {
   const todos = useSelector((state) => state.todos);
+  const darkMode = useSelector((state) => state.darkMode);
+
+  // useEffect(() => {
+
+  // },[darkMode])
 
   return (
-    <div className="todoList">
+    <div className={darkMode ? "todoList color__invert" : "todoList"}>
       {todos && todos.length ? (
         <>
           {todos.map((todo) => {
@@ -22,7 +27,15 @@ export default function TodoList({ handleFormChange }) {
         </>
       ) : (
         <>
-          <p className="todoList__emptyMsg">No todos yet!</p>
+          <p
+            className={
+              darkMode
+                ? "todoList__emptyMsg color__invert"
+                : "todoList__emptyMsg"
+            }
+          >
+            No todos yet!
+          </p>
         </>
       )}
       <p className="todoList__addMore" onClick={handleFormChange}>

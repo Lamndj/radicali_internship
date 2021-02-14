@@ -10,9 +10,14 @@
 }
 
 .confirmation__body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   background-color: white;
   width: 50%;
+  /* min-height: 250px; */
   padding: 20px;
+  box-shadow: 0px 0px 24px 0px #000;
 }
 
 .confirmation__card {

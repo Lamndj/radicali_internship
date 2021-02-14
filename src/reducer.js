@@ -1,6 +1,7 @@
 const initialState = {
   todos: [],
   confirmTodo: {},
+  darkMode: false,
 };
 
 const reducer = (state = initialState, action) => {
@@ -21,6 +22,12 @@ const reducer = (state = initialState, action) => {
       return {
         ...state,
         confirmTodo: action.payload,
+      };
+    }
+    case "DARK_MODE": {
+      return {
+        ...state,
+        darkMode: action.payload,
       };
     }
     default: {
